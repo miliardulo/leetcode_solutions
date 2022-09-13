@@ -1,10 +1,9 @@
 /*
-26. Remove Duplicates from Sorted Array
+27. Remove Element
 Easy
 
-Given an integer array nums sorted in non-decreasing order, remove the
-duplicates in-place such that each unique element appears only once. The
-relative order of the elements should be kept the same.
+Given an integer array nums and an integer val, remove all occurrences of val in
+nums in-place. The relative order of the elements may be changed.
 
 Since it is impossible to change the length of the array in some languages, you
 must instead have the result be placed in the first part of the array nums. More
@@ -22,23 +21,21 @@ input array in-place with O(1) extra memory.
 
 using namespace std;
 
-// put unique elements to the front of the array
+// put non-target elements to the front of the array
 
-int removeDuplicates(vector<int> &nums) {
+int removeElement(vector<int> &nums, int val) {
   int x = 0;
-  for (auto &&i : nums) {
-    if (i != nums[x]) {
-      nums[++x] = i;
-    }
-  }
-  return x + 1;
+  for (int n : nums)
+    if (n != val)
+      nums[x++] = n;
+  return x;
 }
 
-// actually delete duplicates (slower)
+// actually delete target elements (slower)
 /*
-int removeDuplicates(vector<int> &nums) {
-  for (auto it = nums.begin(); it != nums.end() - 1;) {
-    if (*it == *(it + 1))
+int removeElement(vector<int> &nums, int val) {
+  for (auto it = nums.begin(); it != nums.end();) {
+    if (*it == val)
       it = nums.erase(it);
     else
       it++;
