@@ -20,10 +20,8 @@ An input string is valid if:
 using namespace std;
 
 // O(N) solution?
-bool
-isValid(string s)
-{
-  unordered_map<char, char> dict = { { ')', '(' }, { '}', '{' }, { ']', '[' } };
+bool isValid(string s) {
+  unordered_map<char, char> dict = {{')', '('}, {'}', '{'}, {']', '['}};
   stack<char> stk;
   for (char c : s) {
     if (dict.find(c) == dict.end())

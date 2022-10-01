@@ -29,9 +29,7 @@ isPalindrome(int x)
  */
 
 // O(logN) solution - without converting the integer to a string
-bool
-isPalindrome(int x)
-{
+bool isPalindrome(int x) {
   if (x < 10)
     return x < 0 ? false : true;
   int highpow = int(floor(log10(x)));

@@ -15,12 +15,9 @@ You may return the answer in any order.
 
 using namespace std;
 
-void
-makenum(int x, int n, int k, vector<int>& v);
+void makenum(int x, int n, int k, vector<int> &v);
 
-vector<int>
-numsSameConsecDiff(int n, int k)
-{
+vector<int> numsSameConsecDiff(int n, int k) {
   vector<int> ret;
   for (int i = 1; i <= 9; i++) {
     makenum(i, n - 1, k, ret);
@@ -28,9 +25,7 @@ numsSameConsecDiff(int n, int k)
   return ret;
 }
 
-void
-makenum(int x, int n, int k, vector<int>& v)
-{
+void makenum(int x, int n, int k, vector<int> &v) {
   if (n == 0) {
     v.push_back(x);
     return;

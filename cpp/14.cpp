@@ -14,9 +14,7 @@ If there is no common prefix, return an empty string "".
 using namespace std;
 
 // O(NM) solution (N: size of strs, M: length of the shortest string)
-string
-longestCommonPrefix(vector<string>& strs)
-{
+string longestCommonPrefix(vector<string> &strs) {
   bool nextbreak = false;
   string ret = "";
   string target = strs[0];

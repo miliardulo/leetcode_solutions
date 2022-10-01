@@ -31,16 +31,14 @@ twoSum(vector<int>& nums, int target)
  */
 
 // O(N) solution. Use hashmap.
-vector<int>
-twoSum(vector<int>& nums, int target)
-{
+vector<int> twoSum(vector<int> &nums, int target) {
   int nl = nums.size();
   unordered_map<int, int> h;
   for (int i = 0; i < nl; i++) {
     auto iter = h.find(target - nums[i]);
     if (iter != h.end())
-      return { i, iter->second };
+      return {i, iter->second};
     h[nums[i]] = i;
   }
-  return { -1, -1 };
+  return {-1, -1};
 }

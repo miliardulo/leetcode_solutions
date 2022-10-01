@@ -36,17 +36,13 @@ Given a roman numeral, convert it to an integer.
 
 using namespace std;
 
-void
-romanReplace(string& s, string target, string restr);
+void romanReplace(string &s, string target, string restr);
 
 // O(N) solution
-int
-romanToInt(string s)
-{
-  unordered_map<char, int> romanDict = { { 'I', 1 },   { 'V', 5 },
-                                         { 'X', 10 },  { 'L', 50 },
-                                         { 'C', 100 }, { 'D', 500 },
-                                         { 'M', 1000 } };
+int romanToInt(string s) {
+  unordered_map<char, int> romanDict = {{'I', 1},   {'V', 5},   {'X', 10},
+                                        {'L', 50},  {'C', 100}, {'D', 500},
+                                        {'M', 1000}};
   romanReplace(s, "IV", "IIII");
   romanReplace(s, "IX", "VIIII");
   romanReplace(s, "XL", "XXXX");
@@ -54,14 +50,12 @@ romanToInt(string s)
   romanReplace(s, "CD", "CCCC");
   romanReplace(s, "CM", "DCCCC");
   int num = 0;
-  for (auto&& i : s)
+  for (auto &&i : s)
     num += romanDict[i];
   return num;
 }
 
-void
-romanReplace(string& s, string target, string restr)
-{
+void romanReplace(string &s, string target, string restr) {
   auto iter = s.find(target);
   if (iter != string::npos)
     s.replace(iter, 2, restr);

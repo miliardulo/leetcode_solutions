@@ -12,9 +12,7 @@ the longest valid (well-formed) parentheses substring.
 using namespace std;
 
 // O(N) solution using stack.
-int
-longestValidParentheses(string s)
-{
+int longestValidParentheses(string s) {
   stack<int> stk;
   stk.push(-1);
   int sl = s.length();
